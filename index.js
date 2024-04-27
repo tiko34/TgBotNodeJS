@@ -1,17 +1,38 @@
-const { Telegraf } = require('telegraf');
+
+const { Telegraf, Extra, Stage, session } = require('telegraf');
+
 const axios = require('axios');
 const cheerio = require('cheerio');
 const SiteChapters = require('./src/SiteChapters.js');
 const BotToken = require('./src/BotToken.js');
 const ParseHTML = require('./src/ParseHTML.js');
-
+const { StartScene } = require('./src/scenes/StartScene');
 //Токен бота
 const bot = new Telegraf(BotToken.GetBotToken());
-//Отправка объектов при первом запуске бота
-bot.start((ctx) => {ctx.reply('Привет!');});
+
+//Стартовая сцена
+
+bot.use(StartScene.middleware());
+
+
+
+
+
+
+//Отправка объектов при первом запуске бот
+
+
+
+
+
+
+
+
+
 
 bot.hears('a', async function (ctx) {
-
+    await ctx.scene.enter('StartScene')
+    await next()
     ctx.reply(await GetScheduleGroup());
    
 });
