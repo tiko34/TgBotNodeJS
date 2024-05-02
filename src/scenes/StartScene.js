@@ -1,6 +1,6 @@
-const { Telegraf, Scene, session } = require('telegraf');
+const {BaseScene, Telegraf, Scenes, session } = require('telegraf')
 
-const StartScene = new Scene('start');
+const StartScene = new Scenes.BaseScene('StartScene');
 
 StartScene.enter((ctx) => ctx.reply('Welcome! Choose an option:', {
     reply_markup: {

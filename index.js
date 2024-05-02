@@ -6,32 +6,16 @@ const cheerio = require('cheerio');
 const SiteChapters = require('./src/SiteChapters.js');
 const BotToken = require('./src/BotToken.js');
 const ParseHTML = require('./src/ParseHTML.js');
-const { StartScene } = require('./src/scenes/StartScene');
+const StartScene = require('./src/scenes/StartScene');
 //Токен бота
 const bot = new Telegraf(BotToken.GetBotToken());
-
-//Стартовая сцена
-
-bot.use(StartScene.middleware());
-
-
-
-
-
-
-//Отправка объектов при первом запуске бот
-
-
-
-
-
-
-
 
 
 
 bot.hears('a', async function (ctx) {
-    await ctx.scene.enter('StartScene')
+   
+   // await ctx.scene.
+
     await next()
     ctx.reply(await GetScheduleGroup());
    
