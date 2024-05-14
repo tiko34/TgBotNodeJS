@@ -16,7 +16,7 @@ bot.hears('a', async function (ctx) {
    
    // await ctx.scene.
 
-    await next()
+  //  await next()
     ctx.reply(await GetScheduleGroup());
    
 });
