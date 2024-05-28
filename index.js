@@ -24,6 +24,7 @@ bot.hears('a', async function (ctx) {
 //Получение всех разделов расписания 
 async function GetScheduleGroup()
 {
+
     try {
         console.log('Функция GetScheduleGroup');
         console.log('--------------------------');
